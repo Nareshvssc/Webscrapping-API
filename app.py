@@ -84,7 +84,7 @@ def list_of_courses(username,password,data_base_name,collection_name):
 
 
 if __name__=='__main__':
-    app.run(port=5000, debug=True)
+    app.run(port=5000, debug=False)
     #list_of_courses()
 
 
