@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block head %}
+
+<title>Search Page</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+{% endblock %}
+
+{% block body %}
+<div class="content">
+    <h1 style="text-align: center">Scrapping Data from ineuron.ai courses</h1>
+    <h2 >Enter MongoDB essentials </h2>
+    <div class="form">
+        <form action="/scrapp_data" method="POST">
+            Username<input type="text" name="username" id="username"><br><br>
+            Password<input type="password" name="mypassword"><br><br>
+            Database Name<input type="text" name="DBname" id="DBname"><br><br>
+            Collection Name<input type="text" name="collec_name" id="collec_name"><br><br>
+            <input type="submit" value="search">
+        </form>
+    </div>
+    <h3>*All data will pe pushed to MongoDB database Please enter valid credentials</h3>
+
+    <h3>*Data will be compared and pushed to MONGODB </h3>
+</div>
+{% endblock %}
