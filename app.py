@@ -11,14 +11,14 @@ from flask_cors import cross_origin
 
 app = Flask(__name__)
 @app.route('/',methods=['GET']) #route to display home page for entering mongoDB credentials
-#@cross_origin()
+@cross_origin()
 def homepage():
     return render_template("index.html")
 
 
 
 @app.route('/scrapp_data',methods=['POST','GET']) #to display the data collected from website
-#@cross_origin()
+@cross_origin()
 def index():
     if request.method =='POST':
         try:
