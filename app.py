@@ -8,7 +8,8 @@ import push_to_mongodb
 from flask import Flask, render_template, request
 import driver_launcher
 from flask_cors import cross_origin
-from os import environ
+from wsgiref import simple_server
+import os
 
 app = Flask(__name__)
 @app.route('/',methods=['GET']) #route to display home page for entering mongoDB credentials
@@ -84,10 +85,18 @@ def list_of_courses(username,password,data_base_name,collection_name):
 
 
 
-if __name__=='__main__':
-    
-    app.run()
-    #list_of_courses()
+if __name__ == "__main__":
+    port = int(os.getenv("PORT"))
+    app = app()
+    host = '127.0.0.1'
+    httpd = simple_server.make_server(host=host,port=port, app=app)
+    httpd.serve_forever()
+
+
+
+
+
+
 
 
 
